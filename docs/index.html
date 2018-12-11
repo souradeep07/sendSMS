@@ -1,0 +1,23 @@
+<html>
+    <head>
+        
+    </head>
+<body>
+<form>
+Number: <input type="tel" id="num"><br>
+Text: <input type="text" id="msg"><br>
+<button type="button" onclick="call();">Send</button>
+</form>
+<script>
+            function call(){
+              
+                    var first="http://api.msg91.com/api/sendhttp.php?country=91&sender=8000000000&route=4&mobiles=";
+                    var second=document.getElementById("num").value;
+                    var third="&authkey=240734AwgiDMeofNV5bb3dcf7&encrypt=1&message=";
+                    var forth=document.getElementById("msg").value;
+                    var final=first+second+third+forth;
+                    window.location.assign(final);
+                }
+    </script>
+</body>
+</html>
