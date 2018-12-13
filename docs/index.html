@@ -3,7 +3,7 @@
        <title> Send Text</title>
     </head>
 <body>
-<form>
+<form onsubmit="call();">
     <table>
         <tr>
 <td>Number(+91):</td> <td><input type="tel" id="num" align="center" required></td>
@@ -12,7 +12,7 @@
 <td>Message:</td><td><input type="text" id="msg"  align="center" required></td>
              </tr>
         <tr>
-<td><button type="button"  align="center" onclick="call();">Send</button></td>
+<td><button type="submit"  align="center" >Send</button></td>
             </tr>
         </table>
 </form>
