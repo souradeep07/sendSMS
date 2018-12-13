@@ -6,10 +6,10 @@
 <form>
     <table>
         <tr>
-<td>Number(+91):</td> <td><input type="tel" id="num" align="center"></td>
+<td>Number(+91):</td> <td><input type="tel" id="num" align="center" required></td>
             </tr>
         <tr>
-<td>Message:</td><td><input type="text" id="msg"  align="center"></td>
+<td>Message:</td><td><input type="text" id="msg"  align="center" required></td>
              </tr>
         <tr>
 <td><button type="button"  align="center" onclick="call();">Send</button></td>
@@ -18,9 +18,13 @@
 </form>
 <script>
             function call(){
-              
+                    
                     var first="http://api.msg91.com/api/sendhttp.php?country=91&sender=SUNITA&route=4&mobiles=";
                     var second=document.getElementById("num").value;
+                    if(second.length!=0){
+                        alert("Invalid Number");
+                        return;
+                    }
                     var third="&authkey=240734AwgiDMeofNV5bb3dcf7&encrypt=1&message=";
                     var forth=document.getElementById("msg").value;
                     var final=first+second+third+forth;
