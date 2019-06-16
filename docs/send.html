@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title> Send Text</title>
+    </head>
+<body>
+<form >
+    <table>
+        <tr>
+<td>Number(+91):</td> <td><input type="tel" id="num"  required></td>
+            </tr>
+        <tr>
+<td>Message:</td><td><input type="text" id="msg" required></td>
+             </tr>
+        <tr>
+<td><button type="button" onclick="call();">Send</button></td>
+            </tr>
+        </table>
+</form>
+<script>
+            function call(){
+                    
+                    var first="http://api.msg91.com/api/sendhttp.php?country=91&sender=ankan7&route=4&mobiles=";
+                    var second=document.getElementById("num").value;
+                    if(second.length!=10){
+                        alert("Invalid phone number");
+                        return;
+                    }
+                    var third="&authkey=240734AwgiDMeofNV5bb3dcf7&encrypt=1&message=";
+                    var forth=document.getElementById("msg").value;
+                if(forth.length<1){
+                        alert("Type your message first!");
+                        return;
+                    }
+                    var final=first+second+third+forth;
+                    window.location.assign(final);
+                }
+    </script>
+</body>
+</html>
